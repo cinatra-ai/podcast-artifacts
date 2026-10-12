@@ -105,14 +105,14 @@ describe("package.json manifest — the episode identity", () => {
     const ui = pkg.cinatra.artifact.ui;
     expect(ui.abiVersion).toBe(1);
     expect(ui.sdkAbiRange).toBe("^2.5.0");
-    expect(Object.keys(ui.renderers).sort()).toEqual(["detail", "preview"]);
+    expect(Object.keys(ui.renderers).sort()).toEqual(["detail", "listRow", "preview"]);
   });
 
   it("draws every form it accepts — an own display never falls through", () => {
     // An extension's own display wins outright for its own type, so a form this
     // package accepts but no renderer declares would draw nothing at all.
-    for (const renderer of Object.values(pkg.cinatra.artifact.ui.renderers)) {
-      expect(renderer.representations).toEqual(MIMES);
+    for (const slot of ["detail", "preview"]) {
+      expect(pkg.cinatra.artifact.ui.renderers[slot].representations).toEqual(MIMES);
     }
   });
 

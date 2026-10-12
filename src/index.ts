@@ -97,6 +97,12 @@ export const podcastArtifactsManifest: PodcastArtifactsManifest = {
         propsApiVersion: 1,
         representations: ["application/json"],
       },
+      // The row icon drawn in the Artifacts list for a row of this type; it
+      // draws no episode data, so it declares no representation.
+      listRow: {
+        entry: "./src/renderers/list-row.tsx",
+        propsApiVersion: 1,
+      },
     },
   },
 };
