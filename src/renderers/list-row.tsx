@@ -7,7 +7,7 @@
 import { Podcast } from "lucide-react";
 import type { ReactElement } from "react";
 
-import type { ArtifactRendererProps } from "@cinatra-ai/sdk-extensions";
+import type { ArtifactRendererProps } from "../artifact-renderer-props";
 
 export default function EpisodeRowIcon(
   _props: { artifact: Pick<ArtifactRendererProps["artifact"], "objectType"> },
